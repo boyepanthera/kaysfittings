@@ -1,0 +1,116 @@
+<% include ./partials/header %>
+
+<!-- grow -->
+<div class="grow">
+    <div class="container">
+        <h2><%=product.productName%></h2>
+    </div>
+</div>
+<!-- grow -->
+<div class="product">
+    <div class="container">
+
+        <div class="product-price1">
+            <div class="top-sing">
+                <div class="col-md-7 single-top">
+                    <div class="img-thumbnail">
+                    <img class='products-image img-thumbnail' src='<%=product.image%>' height='400' width='500' >
+                    </div>
+                </div>
+                <div class="col-md-5 single-top-in simpleCart_shelfItem">
+                    <div class="single-para ">
+                      <strong>
+                          <h4><%=product.productName%></h4>
+                      </strong>
+                        <p class='well'> <%=product.description%></p>
+                       <form method="post" action='/order'>
+                           <script src="https://js.paystack.co/v1/inline.js"></script>
+                                <strong>
+                                    <h3 name='price' class='pull-left'>₦ <%=product.price%></h3>
+                                </strong>
+                           <a class='btn btn-success pull-right' type="button" id='pay' onclick="payWithPaystack()"><i
+                                   class="fas fa-shopping-cart"></i> Buy Now</a>
+                       <hr>
+                            <input type='hidden' name='orderPrice' value='<%=product.price%>' >
+                            <input type='hidden' name='orderName' value='<%=product.productName%>' >
+                        <hr>                                       
+                            <select class="btn btn-outline-success" required name='size'>                  
+                                <option>Pick a size</option>
+                                    <% product.sizes.forEach(function(size) { %>
+                                        <option value='<%=size%>'><%=size%></option>
+                                    <% }) %>                         
+                            </select>                               
+                            <select class="btn btn-outline-success" required name='color'>                  
+                                <option>Pick a color</option>
+                                    <% product.colors.forEach(function(color) { %>
+                                        <option value='<%=color%>'><%=color%></option>
+                                    <% }) %>                         
+                            </select>                    
+                            <br> </br>
+                            <select class="btn btn-outline-success" required name='pattern'>                  
+                                <option>Select pattern</option>
+                                    <% product.patterns.forEach(function(pattern) { %>
+                                        <option value='<%=pattern%>'><%=pattern%></option>
+                                    <% }) %>                         
+                            </select>
+                            <br>
+                            <div>
+                               <strong>Available Quantity: </strong> <%=product.quantity%> remaining
+                            </div>                    
+                        <hr>
+                        <button style="display:none" class='col btn btn-success' id="div1"> 
+                        </button>
+                        </form>
+                       <script>
+                           function payWithPaystack() {
+                               var handler = PaystackPop.setup({
+                                   key: 'pk_test_72c3cf3001174b49c6ec15bc58b2e67b1ad353c7',
+                                   email: '<%=currentUser.email%>',
+                                   amount: '<%=product.price%>' + "00",
+                                   currency: "NGN",
+                                   ref: '' + Math.floor((Math.random() * 1000000000) +
+                                       1
+                                       ), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                                   metadata: {
+                                       custom_fields: [{
+                                           display_name: "<%=currentUser.phone%>",
+                                           variable_name: "<%=currentUser.phone%>",
+                                           value: "<%=currentUser.phone%>"
+                                       }]
+                                   },
+                                   callback: function (response) {
+                                        var para = document.getElementById("div1");
+                                        var node = document.createTextNode("Fill Delivery details");
+                                        para.appendChild(node);
+                                        var paid = document.getElementById('pay');
+                                        paid.style.display='none'
+                                        para.style.display= 'block'
+                                        alert('success. transaction ref is ' + response.reference +
+                                           ' Close pop-up and fill delivery address details');
+                                   },
+                                   onClose: function () {
+                                       alert('window closed');
+                                   }
+                               });
+                               handler.openIframe();
+                           }
+                       </script>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+      <div class='container'>
+          <% if(currentUser && currentUser.isAdmin) { %>
+          <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+              <button class=" btn btn-danger"> <i class="fas fa-trash-alt"></i> Delete <%=product.productName%></button>
+              <a class=" btn btn-warning" href='/products/<%=product._id%>/edit'>Edit <%=product.productName%></a>
+          </form>
+          <% } %>
+      </div>
+</div>
+
+
+<!--//content-->
+<% include ./partials/footer %>

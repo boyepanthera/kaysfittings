@@ -1,0 +1,65 @@
+<% include ./partials/header %>
+
+    <div class="banner">
+        <div class="container">
+            <script src="js/responsiveslides.min.js"></script>
+            <script>
+                $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+            <div id="top" class="callbacks_container">
+                <ul class="rslides" id="slider">
+                    <li>
+
+                        <div class="banner-text">
+                            <h3>Kayfittings Interior decorations</h3>
+                            <p>Get a world class interior decoration for your apartment with great artistic effect and
+                                color combination</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-text">
+                            <h3>There are many Decorating companies....</h3>
+                            <p>Kayfittings give you the best you can see around.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+            <div class="container">
+                <div class="">
+                    <div class="">
+                        <div class="content-top-bottom ">
+                            <hr>
+                            <h2>Interior Decorations</h2>
+                            <% interiors.forEach(function(interior, index, array){ %>
+                                <div class="col-md-3 img-thumbnail index-card mr-5">
+                        
+                                    <img class="img-responsive index-image" src="<%=interior.image%>" alt="">
+                                    <hr>
+                                    <div class='text-center'>                                     
+                                        <h4 center><%=interior.productName%></h4>                                    
+                                        <strong>
+                                            <h4 class="center">₦<%=interior.price%></h4>
+                                        </strong>
+                                        <a href='/interiordecor/<%=interior._id%>' class='center btn btn-success'>See More</a>
+                                    </div>  
+                                </div>
+                            <% }); %>                   
+                        </div>
+                        </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+<hr>
+<% include ./partials/footer %>

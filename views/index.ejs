@@ -1,0 +1,122 @@
+<% include ./partials/header %>
+    <div class="banner">
+        <div class="container">
+            <script src="js/responsiveslides.min.js"></script>
+            <script>
+                $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+            <div id="top" class="callbacks_container">
+                <ul class="rslides" id="slider">
+                    <li>
+
+                        <div class="banner-text">
+                            <h3>Welcome to Kayfittings </h3>
+                            <p>We give you the best bedding quality and design.</p>
+
+                        </div>
+
+                    </li>
+                    <li>
+
+                        <div class="banner-text">
+                            <h3>There are many </h3>
+                            <p>Popular belief: The beauty of your bed influence your dreams.</p>
+
+
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="banner-text">
+                            <h3>Hey! Awesome</h3>
+                            <p>We offer Interior design, Beddings, and Baby Beddings</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!--content-->
+    <div class="container">               
+                    <div class="row">
+                        <hr>
+                        <h3 class='text-center'>BEDDING PRODUCTS</h3>
+                        <% beddings.forEach(function(bedding, index, array) { %>
+                            <span class="grid-top img-responsive img-thumbnail home-card" >
+                                <a href="/products/<%=bedding._id%>" class="b-link-stripe b-animate-go  thickbox">
+                                    <img class="img-responsive home-image" src="<%=bedding.image%>" alt="">
+                                    <span class="b-wrapper">
+                                        <span class="b-animate b-from-left b-delay03">
+                                            <span><%=bedding.productName%></span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <p class="text-center"><a href="/products/<%=bedding._id%>"><%=bedding.productName%></a></p>
+                                <a href="/products/<%=bedding._id%>" class="item_add">
+                                    <p class="number item_price"><i> </i>₦<%=bedding.price%></p>
+                                </a>
+                            </span>
+                        <% }); %>               
+                    </div>
+            
+                    <div class="row">
+                        <hr>
+                        <h3 class="text-center">BABY BEDDINGS</h3>
+                        <% babyBeddings.forEach(function(babyBedding, index, array) { %>
+                            <span class="grid-top img-responsive img-thumbnail home-card">
+                                <a href="/babybeddings/<%=babyBedding._id%>" class="b-link-stripe b-animate-go  thickbox"><img
+                                        class="img-responsive home-image" src="<%=babyBedding.image%>" alt="">
+                                    <div class="b-wrapper">
+                                        <h3 class="b-animate b-from-left b-delay03">
+                                            <span><%=babyBedding.productName%></span>
+                                        </h3>
+                                    </div>
+                                </a>
+                                <p class="text-center"><a href="/babybeddings/<%=babyBedding._id%>"><%=babyBedding.productName%></a></p>
+                                <a href="/babybeddings/<%=babyBedding._id%>" class="item_add">
+                                    <p class="number item_price"><i> </i>₦<%=babyBedding.price%></p>
+                                </a>
+                            </span>
+                        <% }); %>               
+                    </div>
+                    
+                    <div class="row">
+                        <hr>
+                        <h3 class="text-center">INTERIOR DESIGN</h3>
+                        <% interiors.forEach(function(interior, index, array) { %>
+                        <span class="grid-top img-responsive img-thumbnail home-card">
+                            <a href="/interiordecor/<%=interior._id%>" class="b-link-stripe b-animate-go  thickbox">
+                                <img class="img-responsive  home-image" src="<%=interior.image%>" alt="">
+                                <span class="b-wrapper">
+                                    <span class="b-animate b-from-left b-delay03">
+                                        <span><%=interior.productName%></span>
+                                    </span>
+                                </span>
+                            </a>
+                            <p class="text-center"><a href="/interiordecor/<%=interior._id%>"><%=interior.productName%></a></p>
+                            <a href="/interiordecor/<%=interior._id%>" class="item_add">
+                                <p class="number item_price"><i> </i>₦<%=interior.price%></p>
+                            </a>
+                        </span>
+                        <% }); %>
+                    
+                    </div>
+                </div>
+            
+            <!----->
+        
+        <!---->
+    <hr>
+   
+    <% include ./partials/footer %>

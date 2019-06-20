@@ -1,0 +1,69 @@
+<% include ./partials/header %>
+    <div class='container'>
+         <div class="row center">
+             <div class="col-offset-7" >
+                 <div id= "form-div">
+                     <form id="checkout-form" name="form" method="post" action="/checkout/<%=order._id%>">
+                         <h3 id="form-head" class=" d-flex text-center justify-content-center">Fill delivery details</h3>
+                         <div class="form-group">
+                             <label for="addressLine">Address Line 1</label>
+                             <input class="form-control" name="addressLine" id="addressLine" type="text"
+                                 placeholder="Home and Street address" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="city">City</label>
+                             <input class="form-control" name="city" id="city" type="text" placeholder='City' required>
+                         </div>
+                         <div class="form-group">
+                             <label for="description">State</label>
+                             <br>
+                                <select required name='state'>
+                                    <option disabled selected>--Select State--</option>
+                                    <option value="Abia">Abia</option>
+                                    <option value="Adamawa">Adamawa</option>
+                                    <option value="Akwa Ibom">Akwa Ibom</option>
+                                    <option value="Anambra">Anambra</option>
+                                    <option value="Bauchi">Bauchi</option>
+                                    <option value="Bayelsa">Bayelsa</option>
+                                    <option value="Benue">Benue</option>
+                                    <option value="Borno">Borno</option>
+                                    <option value="Cross Rive">Cross River</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Ebonyi">Ebonyi</option>
+                                    <option value="Edo">Edo</option>
+                                    <option value="Ekiti">Ekiti</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="FCT">Federal Capital Territory</option>
+                                    <option value="Gombe">Gombe</option>
+                                    <option value="Imo">Imo</option>
+                                    <option value="Jigawa">Jigawa</option>
+                                    <option value="Kaduna">Kaduna</option>
+                                    <option value="Kano">Kano</option>
+                                    <option value="Katsina">Katsina</option>
+                                    <option value="Kebbi">Kebbi</option>
+                                    <option value="Kogi">Kogi</option>
+                                    <option value="Kwara">Kwara</option>
+                                    <option value="Lagos">Lagos</option>
+                                    <option value="Nasarawa">Nasarawa</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Ogun">Ogun</option>
+                                    <option value="Ondo">Ondo</option>
+                                    <option value="Osun">Osun</option>
+                                    <option value="Oyo">Oyo</option>
+                                    <option value="Plateau">Plateau</option>
+                                    <option value="Rivers">Rivers</option>
+                                    <option value="Sokoto">Sokoto</option>
+                                    <option value="Taraba">Taraba</option>
+                                    <option value="Yobe">Yobe</option>
+                                    <option value="Zamfara">Zamfara</option>
+                                </select>
+                         </div>
+                         <div class="submit-button">
+                             <input type="submit" class="btn btn-success btn-block" name="submit" value="Submit address">
+                         </div>
+                     </form>
+                 </div>
+             </div>
+            </div>
+    </div>
+<% include ./partials/footer %>

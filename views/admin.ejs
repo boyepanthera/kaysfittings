@@ -1,0 +1,136 @@
+<% include ./partials/header %>
+<h1 class="jumbotron text-center text-info">Kaysfittings admin panel</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="form-div">
+                <form id="admin-form" name="form" method="post" action="/products" enctype="multipart/form-data">
+                    <h3 id="form-head" class=" d-flex text-center justify-content-center">Upload Bedding</h3>
+                    <div class="form-group">
+                        <label for="productName">Bedding Name</label>
+                        <input class="form-control" name="productName" id="productName" type="text" placeholder="Product Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input class="form-control" name="price" id="price" type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input class="form-control" name="quantity" id="quantity" type="number" placeholder="number available" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="colors">Colors</label>
+                        <input class="form-control" name="colors" id="colors" type="text" placeholder="type with comma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizes">Product Sizes</label>
+                        <input class="form-control" name="sizes" id="sizes" type="text"
+                            placeholder="Product sizes, type in separate with comma" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="patterns">Product patterns</label>
+                        <input class="form-control" name="patterns" id="patterns" type="text"
+                            placeholder="Product pattern, type in separate with comma" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Product Image</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Product Description</label>
+                        <input class="form-control" name="description" id="description" type="text" placeholder="Product Description"
+                            required>
+                        
+                    </div>
+                    <div class="submit-button">
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div id="form-div">
+                <form id="admin-form" name="form" method="post" action="/babybeddings" enctype="multipart/form-data">
+                    <h3 id="form-head" class=" d-flex text-center justify-content-center">Upload New Baby Bedding</h3>
+                    <div class="form-group">
+                        <label for="partyname">Bedding Name</label>
+                        <input class="form-control" name="productName" id="productName" type="text" placeholder="Product Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partyname">Price</label>
+                        <input class="form-control" name="price" id="price" type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input class="form-control" name="quantity" id="quantity" type="number" placeholder="number available" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="colors">Colors</label>
+                        <input class="form-control" name="colors" id="colors" type="text" placeholder="type in separate with comma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizes">Product Sizes</label>
+                        <input class="form-control" name="sizes" id="sizes" type="text"
+                            placeholder="Product sizes, type in separate with comma" required>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="patterns">Product patterns</label>
+                        <input class="form-control" name="patterns" id="patterns" type="text"
+                            placeholder="Product pattern, type in separate with comma" required>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Product Image</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Product Description</label>
+                        <input class="form-control" name="description" id="description" type="text" placeholder="Product Description"
+                            required>
+                    
+                    </div>
+                    <div class="submit-button">
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="form-div">
+                <form id="admin-form" name="form" method="post" action="/interiordecor" enctype="multipart/form-data">
+                    <h3 id="form-head" class=" d-flex text-center justify-content-center">Upload New Interior Decoration</h3>
+                    <div class="form-group">
+                        <label for="partyname">Bedding Name</label>
+                        <input class="form-control" name="productName" id="productName" type="text" placeholder="Product Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partyname">Price</label>
+                        <input class="form-control" name="price" id="price" type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Product Description</label>
+                        <textarea class="form-control" name="description" id="description" type="text"
+                            placeholder="Product Description" required>
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Product Image</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <div class="submit-button">
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+</div>
+<% include ./partials/footer %>

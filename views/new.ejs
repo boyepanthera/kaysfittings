@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <form action="/products/new" method='POST'  class='form-signin' id='form'>
+        <h2 class='form-signin-heading'>Upload a Bedding <i class='glyphicon glyphicon-shopping-cart'></i></h2>
+        <label for="productName" class='sr-only'>Product Name:</label>
+        <input type="text" name="productName" id="productName" placeholder="e.g. plain bedding" class='form-control'>
+        <label for="productDescription" class='sr-only'>Product Description:</label>
+        <input type="text" name="productDescription" id="productDescription" placeholder="e.g. this product is 6by6 inches..."
+            class='form-control'>
+        <label for="productType" class='sr-only'>Product Type:</label>
+        <select name="productType" id="productType">
+            <option value="babyBeddings">BabyBeddings</option>
+            <option value="interior">Interior</option>
+        </select>
+        <label for="price" class='sr-only'>Price #</label>
+        <input type="number" name="price" id="price" placeholder="e.g. # 8000" class='form-control'>
+        <button class='btn btn-outline-primary'>submit</button>
+    </form>
+    </div>
+</div>
+
+<% include ./partials/footer %>

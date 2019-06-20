@@ -1,0 +1,49 @@
+<% include ./partials/header %>
+    <!-- grow -->
+    <div class="grow">
+        <div class="container">
+            <h2>Login</h2>
+        </div>
+    </div>
+    <!-- grow -->
+    <!--content-->
+    <div class="container">
+        <div class="account">
+            <div class="account-pass">
+                <div class="col-md-8 account-top"> 
+                    <form id="register-form-div" name="form" method="post" action="/login">
+                        <h3 id="form-head" class=" d-flex text-center justify-content-center"><i
+                                class="fas fa-users"></i> Login</h3>
+                        <div class="form-group">
+                            <label for="partyname"> <i class="fas fa-user-plus"></i> Username</label>
+                            <input class="form-control" name="username" id="username" type="text" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password"
+                                placeholder='password goes here' required>
+                        </div>
+                        <div class="submit-button">
+                        <button class="btn btn-success">Login</button> 
+                        <a class='pull-right' href="/register">No Account? Create one here</a>
+                        </div> 
+                    </form>
+                </div>
+                
+                <div class="col-md-4 left-account ">
+                    <a href=""><img class="img-responsive " src="images/s1.jpg" alt=""></a>
+                    <div class="five">
+                        <h2>25% </h2><span>discount</span>
+                    </div>
+                    <a href="/register" class="create">Create an account</a>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--//content-->
+<% include ./partials/footer %>

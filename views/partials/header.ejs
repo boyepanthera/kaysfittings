@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <!-- <h1> Backend Developed by Olanrewaju A. Olaboye 09028320494</h1> -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kaysfittings</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!--theme-style-->
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> -->
+    <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- start menu -->
+    <script src='/js/mainapp.js'></script>
+    <link href="/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="/js/memenu.js"></script>
+    <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+    <script src="/js/simpleCart.min.js"> </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!--header-->
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="social pull-right">
+                    <ul>
+                        <li><a href="#"><i class="facebok"> </i></a></li>
+                        <li><a href="#"><i class="twiter"> </i></a></li>
+                        <li><a href="#"><i class="inst"> </i></a></li>
+                        <li><a href="#"><i class="goog"> </i></a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head-top">
+                <div class="logo">
+                    <h1><a href="/"><img src="/images/loogo.png">KaysFittings</a></h1>
+                </div>
+                <div class=" h_menu4">
+                    <ul class="memenu skyblue">
+                        <li><a class="color8" href="index.php"></a></li>
+                        <li><a class="color1" href="/products">BEDDINGS</a>
+                            <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                    </div>
+                        <li class="grid"><a class="color2" href="/babybeddings">BABY BEDDINGS</a></li>
+                        <li><a class="color1" href="/interiordecor">INTERIOR</a></li>
+                        <% if (!currentUser) { %> 
+                            <li><a class="color4" href="/login">Login</a></li>
+                            <li><a class="color4" href="/register">Register</a></li>
+                        <% } else if(currentUser&&currentUser.isAdmin) { %>                   
+                            <li><a class="color4" href="/admin">Signed In <%=currentUser.username %> </a></li> 
+                            <li><a class="color4" href="/logout">Logout</a></li>
+                        <% }  else { %>
+                             <li><a class="color4">Signed In <%=currentUser.firstName %> </a></li>
+                             <li><a class="color4" href="/logout">Logout</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    <div class="container" id="flash-message">
+        <% if(error && error.length > 0) { %>
+        <div class="alert alert-danger">
+            <p>
+                <%=error %>
+            </p>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+        <div class="alert alert-success">
+            <p>
+                <%= success %>
+            </p>
+        </div>
+        <% } %>
+    </div>
+    </div>

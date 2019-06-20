@@ -1,0 +1,54 @@
+<% include ./partials/header %>
+    <div class="grow">
+        <div class="container">
+            <h2>Register</h2>
+        </div>
+    </div>
+    <div class=" container">
+        <div >
+            <form id="register-form-div" name="form" method="post" action="/register">
+                <h3 id="form-head" class=" d-flex text-center justify-content-center">Register</h3>
+                <div class="form-group">
+                    <label for="partyname"> <i class="fas fa-user-plus"></i>  Username</label>
+                    <input class="form-control" name="username" id="username" type="text"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="partyname">First Name</label>
+                    <input class="form-control" name="firstName" id="firstName" type='text' required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input class="form-control"  class="lastName" name="lastName" id="lastName" type="text"
+                        placeholder="" required>
+                       
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input class="form-control"  type="email" id="email" name="email"
+                        placeholder='email e.g. joh@gmail.com' required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input class="form-control"  type="phone" id="phone" name="phone" placeholder="mobile Number"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password"
+                        placeholder='password goes here' required onkeyup='matchPasswords()' >
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input onkeyup='matchPasswords()'  class="form-control" type="password" id="confirm-password"
+                        name="confirm-password" placeholder='confirming password goes here' required>
+                <span id='message'></span>
+                </div>
+                <div class="submit-button">
+                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--//content-->
+<% include ./partials/footer %>

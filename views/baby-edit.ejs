@@ -1,0 +1,63 @@
+<% include ./partials/header %>
+<div class='container'>
+    <div class="row">
+        <div class="col-md-9">
+            <div >
+                <form class="editor-form" name="form" method="post" action="/babybeddings/<%=product._id%>?_method=PUT"
+                    enctype="multipart/form-data">
+                    <h3 id="form-head" class=" d-flex text-center justify-content-center"> Edit <%=product.productName%>
+                        Bedding</h3>
+                    <div class="form-group">
+                        <label for="productName">Bedding Name</label>
+                        <input class="form-control" value='<%=product.productName%>' name="productName" id="productName"
+                            type="text" placeholder="Product Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input class="form-control" value='<%=product.price%>' name="price" id="price" type="number"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input class="form-control" value='<%=product.quantity%>' name="quantity" id="quantity"
+                            type="number" placeholder="number available" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="colors">Colors</label>
+                        <input class="form-control" value='<%=product.colors%>' name="colors" id="colors" type="text"
+                            placeholder="type with spaces no comma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizes">Product Sizes</label>
+                        <input class="form-control" name="sizes" id="sizes" type="text" value='<%=product.sizes%>'
+                            placeholder="Product sizes, type in with space no comma" required>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label for="patterns">Product patterns</label>
+                        <input class="form-control" name="patterns" id="patterns" type="text"
+                            placeholder="Product pattern, type in with space no comma" value='<%=product.patterns%>'
+                            required>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Product Image</label>
+                        <input type="file" value='<%=product.image%>' id="image" name="image" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Product Description</label>
+                        <input class="form-control" name="description" id="description" type="text"
+                            value='<%=product.description%>' placeholder="Product Description" required>
+
+                    </div>
+                    <div class="submit-button">
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

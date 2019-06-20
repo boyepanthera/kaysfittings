@@ -1,0 +1,61 @@
+<% include ./partials/header %>
+
+<div class="banner">
+    <div class="container">
+        <script src="js/responsiveslides.min.js"></script>
+        <script>
+            $(function () {
+                $("#slider").responsiveSlides({
+                    auto: true,
+                    nav: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    pager: true,
+                });
+            });
+        </script>
+        <div id="top" class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+
+                    <div class="banner-text">
+                        <h3>Kayfittings Baby Beddings</h3>
+                        <p>Get a world class baby bedding for your baby's bed with great artistic effect and
+                            color combination</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-text">
+                        <h3>There are many Decorating companies....</h3>
+                        <p>Kayfittings give you the best you can see around.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+   <hr>
+            <div class="content-top-bottom ">
+                <h2>Baby Beddings</h2>
+                <% babyBeddings.forEach(function(babyBedding, index, array){ %>
+                <div class="col-md-3 img-thumbnail index-card">
+                    <img class="img-responsive index-image" src="<%=babyBedding.image%>" alt="">
+                    <hr>
+                    <div class='text-center'>
+                        <h4 center><%=babyBedding.productName%></h4>
+                        <strong>
+                            <h4 class="center">₦<%=babyBedding.price%></h4>
+                        </strong>
+                        <a href='/babybeddings/<%=babyBedding._id%>' class='center btn btn-success'>See More</a>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        
+</div>
+</div>
+</div>
+<hr>
+<% include ./partials/footer %>
