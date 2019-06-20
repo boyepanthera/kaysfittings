@@ -3,7 +3,8 @@ const app = express ();
 const mongoose = require ('mongoose');
 const LocalStrategy =  require ('passport-local');
 const passport = require('passport');
-const port = 0907 || process.env.PORT
+const port = process.env.PORT
+const ip = process.env.IP;
 const bodyParser = require('body-parser');
 const flash = require ('connect-flash');
 const methodOverride = require('method-override');
@@ -69,4 +70,4 @@ app.use(function (req, res, next) {
 
 app.use('/' , beddingController);
 app.use('/', indexController);
-const server = app.listen (port, (req, res) => console.log ('Kayfittings app started on port ' + port));
+const server = app.listen (port, ip, (req, res) => console.log ('Kayfittings app started on port ' + port));
