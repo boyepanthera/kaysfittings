@@ -3,8 +3,8 @@ const app = express ();
 const mongoose = require ('mongoose');
 const LocalStrategy =  require ('passport-local');
 const passport = require('passport');
-const port = process.env.PORT;
-const ip = process.env.IP;
+const port = 8080 || process.env.PORT;
+// const ip = process.env.IP;
 const bodyParser = require('body-parser');
 const flash = require ('connect-flash');
 const methodOverride = require('method-override');
@@ -33,6 +33,7 @@ let url = process.env.DATABASEURL;
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 // BodyParser configuration
@@ -70,4 +71,4 @@ app.use(function (req, res, next) {
 
 app.use('/' , beddingController);
 app.use('/', indexController);
-const server = app.listen (port, ip, (req, res) => console.log ('Kayfittings app started on port ' + port));
+const server = app.listen (port,(req, res) => console.log ('Kayfittings app started on port ' + port));
